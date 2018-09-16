@@ -1,7 +1,6 @@
 package sketch.modelutils
 
 import sketch.HyperGraph
-import java.util.*
 
 class CompetitionNetwork: HyperGraph<Seller>() {
 
@@ -19,24 +18,22 @@ class CompetitionNetwork: HyperGraph<Seller>() {
 
         /**
          * Returned by [CompetitionNetwork.identifyTopologyClass] when a binary tree
-         * is identified in the current competition network, where each seller has no
-         * captive market, except for the root.
+         * is identified in the current competition network.
          */
-        @JvmStatic val CLASS_BINARY_TREE_CAPTIVE_ON_ROOT_ONLY: Int = 0
+        @JvmStatic val CLASS_BINARY_TREE: Int = 0
 
         /**
          * Returned by [CompetitionNetwork.identifyTopologyClass] when a path structure
-         * is identified in the current competition network, where each seller has no
-         * captive market, except for the leftmost or rightmost seller.
+         * is identified in the current competition network.
          */
-        @JvmStatic val CLASS_PATH_CAPTIVE_ON_ROOT_ONLY: Int = 1
+        @JvmStatic val CLASS_PATH: Int = 1
 
         /**
          * Returned by [CompetitionNetwork.identifyTopologyClass] when a start structure
          * is identified in the current competition network, where each seller has no
          * captive market, except for the root.
          */
-        @JvmStatic val CLASS_STAR_CAPTIVE_ON_ROOT_ONLY: Int = 2
+        @JvmStatic val CLASS_STAR: Int = 2
     }
 
     fun identifyTopologyClass(): Int{
@@ -46,9 +43,13 @@ class CompetitionNetwork: HyperGraph<Seller>() {
             isHyperGraph() ->
                 CLASS_NOT_FOUND // Currently does not support any instance of hyper-graph
 
+            isPathClass() -> CLASS_PATH
+
             isBinaryTree() -> {
-                CLASS_BINARY_TREE_CAPTIVE_ON_ROOT_ONLY // TODO check captive markets
+                CLASS_BINARY_TREE
             }
+
+            isStar() -> CLASS_STAR
 
             else -> CLASS_NOT_FOUND
 
@@ -88,7 +89,6 @@ class CompetitionNetwork: HyperGraph<Seller>() {
                 }
             }
 
-            println("Remove queue: $removeQueue")
             removeQueue.forEach { cloneMatrix.remove(it) }
             removeQueue.clear()
 
@@ -121,7 +121,28 @@ class CompetitionNetwork: HyperGraph<Seller>() {
         if(checkHyperGraph && isHyperGraph())
             return false
 
-        return adjacentMatrix.size - numberEdges() == 1
+        if(adjacentMatrix.size - numberEdges() != 1)
+            return false
+
+        val (nonLeafs,_) = adjacentMatrix.values.partition { it.size == 2 }
+
+        return adjacentMatrix.size - nonLeafs.size == 2 // Total - nonLeafs must be equal to 2
     }
+
+    /**
+     * TODO complete doc
+     */
+    private fun isStar(checkHyperGraph: Boolean = false): Boolean{
+
+        if(checkHyperGraph && isHyperGraph()) return false
+
+        if(adjacentMatrix.size <= 2) return true
+
+        val (nonLeafs,_) = adjacentMatrix.values.partition { it.size == 1 }
+
+        return adjacentMatrix.size - nonLeafs.size == 1 // One peripheral node only
+
+    }
+
 
 }
