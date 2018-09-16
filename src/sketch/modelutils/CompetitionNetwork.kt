@@ -1,8 +1,7 @@
 package sketch.modelutils
 
 import sketch.HyperGraph
-import kotlin.math.max
-import kotlin.math.pow
+import java.util.*
 
 class CompetitionNetwork: HyperGraph<Seller>() {
 
@@ -58,11 +57,14 @@ class CompetitionNetwork: HyperGraph<Seller>() {
     }
 
     /**
-     * TODO complete doc
      *
-     * This method can test if this competition network is
-     * an instance of the hyper-graph if [checkHyperGraph] is **true**, otherwise
-     * assume that it is not an hyper-graph.
+     * Checks if the current competition network is a Binary Tree (BT).
+     *
+     * Steps:
+     * - Check for any vertex with degree higher than 3
+     * - Then, iterate removing every leaf (node with degree 1). A BT must allow removing every leaf
+     * until the graph is empty.
+     *
      */
     private fun isBinaryTree(checkHyperGraph: Boolean = false): Boolean {
 
@@ -73,21 +75,36 @@ class CompetitionNetwork: HyperGraph<Seller>() {
 
         val cloneMatrix =  adjacentMatrix.toMutableMap()
 
-        var hasChanged = false
+        var hasChanged = true
+        val removeQueue = mutableSetOf<Int>()
 
         while(hasChanged){
             hasChanged = false
 
             cloneMatrix.forEach{
-                if(it.)
-                cloneMatrix.remove(it.key)
+                if(it.value.size == 1) { // Removes any vertex with degree equal to 1 (leafs)
+                    removeQueue.add(it.key)
+                    hasChanged = true
+                }
             }
 
+            println("Remove queue: $removeQueue")
+            removeQueue.forEach { cloneMatrix.remove(it) }
+            removeQueue.clear()
+
+            val groups = cloneMatrix.values.flatMap { it.keys }
+
+            for(g in groups){
+
+                val verticesInGroup = cloneMatrix.count{it.value.containsKey(g)} // Count the number of vertices in the group g
+
+                if(verticesInGroup == 1) // Each group must have at least 2 vertices
+                    cloneMatrix.forEach{it.value.remove(g)} // Remove the group which holds only one vertex (the other one (the leaf) has been just removed)
+
+            }
         }
 
-        //return 2 * height + 1 <= numEdges && numEdges <= 2.0.pow(height + 1) - 1
-
-        return true
+        return cloneMatrix.isEmpty() // If empty, every node has been successfully removed (No cycles has been found)
     }
 
 

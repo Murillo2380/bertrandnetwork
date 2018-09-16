@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5767e195-a37c-4edf-926f-1689214c13ff" name="Default Changelist" comment="" />
+    <list default="true" id="5767e195-a37c-4edf-926f-1689214c13ff" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sketch/modelutils/CompetitionNetwork.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/sketch/modelutils/CompetitionNetwork.kt" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,23 +27,23 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JAVA" value="1" />
-          <entry key="Kotlin" value="6" />
+          <entry key="Kotlin" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="kt" value="16233" />
+          <entry key="kt" value="17897" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="java" value="1" />
-          <entry key="kt" value="6" />
+          <entry key="kt" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Kotlin" value="16233" />
+          <entry key="Kotlin" value="17897" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -47,11 +51,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
+            <state>
+              <caret column="1" selection-start-column="1" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -83,23 +87,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sketch/modelutils/CompetitionNetwork.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="81" column="23" lean-forward="true" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="23" />
+            <state relative-caret-position="-525">
+              <caret line="80" column="26" lean-forward="true" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
               <folding>
-                <element signature="e#27#97#0" expanded="true" />
+                <element signature="e#27#70#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/generated/_Collections.kt">
+        <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/generated/_Maps.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2312">
-              <caret line="141" column="34" selection-start-line="141" selection-start-column="34" selection-end-line="141" selection-end-column="34" />
+            <state relative-caret-position="127">
+              <caret line="146" selection-start-line="146" selection-end-line="146" />
             </state>
           </provider>
         </entry>
@@ -125,6 +129,9 @@
       <replace>**true**</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -134,8 +141,8 @@
         <option value="$PROJECT_DIR$/src/sketch/modelutils/Seller.kt" />
         <option value="$PROJECT_DIR$/src/sketch/Sketch.kt" />
         <option value="$PROJECT_DIR$/src/sketch/HyperGraph.kt" />
-        <option value="$PROJECT_DIR$/src/Main.kt" />
         <option value="$PROJECT_DIR$/src/sketch/modelutils/CompetitionNetwork.kt" />
+        <option value="$PROJECT_DIR$/src/Main.kt" />
       </list>
     </option>
   </component>
@@ -145,6 +152,7 @@
     <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -242,7 +250,7 @@
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="TODO" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3289689" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3289689" />
@@ -269,13 +277,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sketch/Sketch.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -290,6 +291,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/generated/_Maps.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="146" selection-start-line="146" selection-end-line="146" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sketch/HyperGraph.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -299,11 +307,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sketch/modelutils/CompetitionNetwork.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="81" column="23" lean-forward="true" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="23" />
+        <state relative-caret-position="-525">
+          <caret line="80" column="26" lean-forward="true" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
           <folding>
-            <element signature="e#27#97#0" expanded="true" />
+            <element signature="e#27#70#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>
