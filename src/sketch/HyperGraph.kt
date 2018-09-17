@@ -33,7 +33,7 @@ open class HyperGraph<T : HyperGraph.Vertex>{
      * integer number currently being used in the [vertices] list.
      */
     fun group(vararg vertices: Int, weight: Double, vertexInstance: (Int) -> T){
-        group(vertices.toList(), weight, vertexInstance)
+        group(vertices.toList(), weight, vertexInstance) // TODO check how does vararg work
     }
 
     /**
@@ -139,7 +139,6 @@ open class HyperGraph<T : HyperGraph.Vertex>{
         return false
     }
 
-
     /**
      * Count the number of edges of the current graph.
      */
@@ -157,6 +156,20 @@ open class HyperGraph<T : HyperGraph.Vertex>{
 
         return numEdges / 2
     }
+
+    fun neighbours(i: Int): Set<Int>{
+
+        //val containsGroup
+
+        val neighbours = mutableSetOf<Int>()
+        val groups = adjacentMatrix[i]?.keys
+
+        if(groups == null)
+            return neighbours
+
+        return adjacentMatrix.filter { it.key != i && !it.value.keys.intersect(groups).isEmpty()}.keys
+    }
+
 
 }
 

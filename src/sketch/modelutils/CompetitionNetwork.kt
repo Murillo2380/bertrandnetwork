@@ -74,7 +74,10 @@ class CompetitionNetwork: HyperGraph<Seller>() {
         if (adjacentMatrix.values.any { it.keys.size > 3 })
             return false // Cannot be a binary tree if any node has a degree higher than 3
 
-        val cloneMatrix =  adjacentMatrix.toMutableMap()
+        val cloneMatrix = adjacentMatrix.toMutableMap()
+
+        for(i in cloneMatrix.keys) // Clone each value from the map, otherwise maps from the original adjacentMatrix can be accidentally modified
+            cloneMatrix[i] = cloneMatrix[i]!!.toMutableMap()
 
         var hasChanged = true
         val removeQueue = mutableSetOf<Int>()
@@ -91,7 +94,6 @@ class CompetitionNetwork: HyperGraph<Seller>() {
 
             removeQueue.forEach { cloneMatrix.remove(it) }
             removeQueue.clear()
-
             val groups = cloneMatrix.values.flatMap { it.keys }
 
             for(g in groups){

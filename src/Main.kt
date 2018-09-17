@@ -22,6 +22,8 @@ private fun binaryTree(): Int{
 
     println(g)
     println("Graph class: ${g.identifyTopologyClass()}")
+    println("Neighbours of 0: " + g.neighbours(0))
+    println("Neighbours of 2: " + g.neighbours(2))
 
     return graphClass
 }
@@ -40,6 +42,7 @@ private fun path(): Int{
 
     println(g)
     println("Graph class: $graphClass")
+    println("Neighbours of 1: " + g.neighbours(1))
 
     return graphClass
 }
@@ -58,6 +61,8 @@ private fun star(): Int{
 
     println(g)
     println("Graph class: $graphClass")
+    println("Neighbours of 0: " + g.neighbours(0))
+    println("Neighbours of 2: " + g.neighbours(2))
 
     return graphClass
 }
